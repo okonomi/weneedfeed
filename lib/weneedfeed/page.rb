@@ -16,6 +16,7 @@ module Weneedfeed
     # @param [String, nil] item_image_selector
     # @param [String] item_link_selector
     # @param [String, nil] item_time_selector
+    # @param [String, nil] item_time_format
     # @param [String] item_title_selector
     # @param [String] item_selector
     # @param [Nokogiri::Node] node
@@ -27,6 +28,7 @@ module Weneedfeed
       item_image_selector:,
       item_link_selector:,
       item_time_selector:,
+      item_time_format:,
       item_title_selector:,
       item_selector:,
       node:,
@@ -38,6 +40,7 @@ module Weneedfeed
       @item_image_selector = item_image_selector
       @item_link_selector = item_link_selector
       @item_time_selector = item_time_selector
+      @item_time_format = item_time_format
       @item_title_selector = item_title_selector
       @item_selector = item_selector
       @node = node
@@ -54,6 +57,7 @@ module Weneedfeed
           link_selector: @item_link_selector,
           node: node,
           time_selector: @item_time_selector,
+          time_format: @item_time_format,
           title_selector: @item_title_selector,
           url: @url
         )

@@ -8,8 +8,11 @@ module Weneedfeed
   class Item
     class << self
       # @param [String] string
+      # @param [String, nil] format
       # @return [Time, nil]
-      def parse_time(string)
+      def parse_time(string, format = nil)
+        return ::Time.strptime(string, format) unless format.nil?
+
         ::Time.strptime(string, '%Y年%m月%d日')
       rescue ::ArgumentError
         begin
@@ -30,6 +33,7 @@ module Weneedfeed
     # @param [String, nil] link_selector
     # @param [Nokogiri::Node] node
     # @param [String] time_selector
+    # @param [String, nil] time_format
     # @param [String] title_selector
     # @param [String] url
     def initialize(
@@ -38,6 +42,7 @@ module Weneedfeed
       link_selector:,
       node:,
       time_selector:,
+      time_format:,
       title_selector:,
       url:
     )
@@ -46,6 +51,7 @@ module Weneedfeed
       @link_selector = link_selector
       @node = node
       @time_selector = time_selector
+      @time_format = time_format
       @title_selector = title_selector
       @url = url
     end
@@ -122,7 +128,7 @@ module Weneedfeed
       string = time_string
       return unless string
 
-      self.class.parse_time(string)
+      self.class.parse_time(string, @time_format)
     end
 
     # @return [String, nil]

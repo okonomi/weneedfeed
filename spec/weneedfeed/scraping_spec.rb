@@ -24,6 +24,7 @@ RSpec.describe Weneedfeed::Scraping do
       item_image_selector: properties['item_image_selector'],
       item_link_selector: properties['item_link_selector'],
       item_time_selector: properties['item_time_selector'],
+      item_time_format: properties['item_time_format'],
       item_title_selector: properties['item_title_selector'],
       item_selector: properties['item_selector'],
       title: properties['title'],

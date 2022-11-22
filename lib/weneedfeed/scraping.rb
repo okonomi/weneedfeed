@@ -23,6 +23,7 @@ module Weneedfeed
     # @param [String, nil] item_image_selector
     # @param [String] item_link_selector
     # @param [String, nil] item_time_selector
+    # @param [String, nil] item_time_format
     # @param [String] item_title_selector
     # @param [String] item_selector
     # @param [String] title
@@ -33,6 +34,7 @@ module Weneedfeed
       item_image_selector:,
       item_link_selector:,
       item_time_selector:,
+      item_time_format:,
       item_title_selector:,
       item_selector:,
       title:,
@@ -43,6 +45,7 @@ module Weneedfeed
       @item_image_selector = item_image_selector
       @item_link_selector = item_link_selector
       @item_time_selector = item_time_selector
+      @item_time_format = item_time_format
       @item_title_selector = item_title_selector
       @item_selector = item_selector
       @title = title
@@ -59,6 +62,7 @@ module Weneedfeed
         item_selector: @item_selector,
         item_link_selector: @item_link_selector,
         item_time_selector: @item_time_selector,
+        item_time_format: @item_time_format,
         item_title_selector: @item_title_selector,
         title: @title,
         url: @url

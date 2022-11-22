@@ -16,6 +16,7 @@ module Weneedfeed
           item_image_selector: page_schema.item_image_selector,
           item_link_selector: page_schema.item_link_selector,
           item_time_selector: page_schema.item_time_selector,
+          item_time_format: page_schema.item_time_format,
           item_title_selector: page_schema.item_title_selector,
           item_selector: page_schema.item_selector,
           title: page_schema.title,

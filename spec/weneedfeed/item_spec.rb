@@ -10,6 +10,7 @@ RSpec.describe Weneedfeed::Item do
       link_selector: 'a',
       node: node,
       time_selector: 'time',
+      time_format: time_format,
       title_selector: 'p:nth-child(2)',
       url: 'http://example.com'
     )
@@ -26,6 +27,10 @@ RSpec.describe Weneedfeed::Item do
       <p>This is episode 1.</p>
       <img src="/example1.jpg"/>
     HTML
+  end
+
+  let(:time_format) do
+    nil
   end
 
   describe '#guid' do
@@ -198,6 +203,20 @@ RSpec.describe Weneedfeed::Item do
 
       it 'returns expected Time' do
         is_expected.to eq(Time.new(Time.now.year, 1, 1))
+      end
+    end
+
+    context 'with "●2000年 1月 1日更新分"' do
+      let(:node_raw) do
+        '<time>●2000年 1月 1日更新分</time>'
+      end
+
+      let(:time_format) do
+        '●%Y年 %m月 %d日更新分'
+      end
+    
+      it 'returns expected Time' do
+        is_expected.to eq(Time.new(2000, 1, 1))
       end
     end
   end

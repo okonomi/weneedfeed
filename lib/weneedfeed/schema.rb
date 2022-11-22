@@ -43,6 +43,7 @@ module Weneedfeed
           item_image_selector: hash['item_image_selector'],
           item_link_selector: hash['item_link_selector'],
           item_time_selector: hash['item_time_selector'],
+          item_time_format: hash['item_time_format'],
           item_title_selector: hash['item_title_selector'],
           item_selector: hash['item_selector'],
           title: hash['title'],
