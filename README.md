@@ -132,6 +132,13 @@ CSS or XPath selector to find element with datetime information in each item.
 - optional
 - Used for `<pubDate>` in `<item>`. Its `datetime` attribute or its inner HTML is used to calculate datetime.
 
+### `pages.item_time_format`
+
+Datetime information format.
+
+- optional
+- By default, auto detect datetime format.
+
 ## Usage
 
 ### Build
